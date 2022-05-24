@@ -21,8 +21,6 @@ Het doel van dit project is om een oplossing te zoeken voor Eric zijn probleem, 
 
 ---
 
-# Rapport
-
 ## Test 1
 
 ### User scenario
