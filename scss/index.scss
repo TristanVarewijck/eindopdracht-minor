@@ -57,6 +57,7 @@ body {
 
   header {
     nav {
+      padding: 0 50px;
       ul {
         list-style-type: none;
         display: flex;
@@ -74,12 +75,43 @@ body {
     }
   }
 
+  main {
+    section {
+      height: 200px;
+      background-color: $green-color;
+    }
+    section:nth-last-of-type(2n) {
+      background-color: $red-color;
+    }
+    .chatbot-container {
+      position: relative;
+      background: $yellow-color;
+      height: 250px;
+      display: flex;
+      justify-content: space-evenly;
+      flex-direction: row;
+      align-items: center;
+
+      button {
+        background: none;
+        outline: none;
+        border: 6px solid #ffffff;
+        border-radius: 50px;
+        padding: 25px;
+
+        img {
+          width: 50px;
+        }
+      }
+    }
+  }
+
   footer {
     display: flex;
     justify-content: center;
     align-items: center;
     background: $yellow-color;
-    height: 60px;
+    height: 30px;
 
     p {
       margin: 0;
