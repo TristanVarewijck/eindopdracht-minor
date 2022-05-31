@@ -1,0 +1,93 @@
+// font
+@font-face {
+  font-family: "Futura";
+  src: url("/assets/font/woff/Futura\ Bold\ font.woff") format("woff");
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("/assets/font/woff/Futura\ Bold\ Italic\ font.woff") format("woff");
+  font-weight: bold;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("/assets/font/woff/Futura\ Book\ font.woff") format("woff");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("/assets/font/woff/Futura\ Book\ Italic\ font.woff") format("woff");
+  font-weight: normal;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("/assets/font/woff/Futura\ Light\ font.woff") format("woff");
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Futura";
+  src: url("/assets/font/woff/Futura\ Light\ Italic\ font.woff") format("woff");
+  font-weight: lighter;
+  font-style: italic;
+}
+
+// colors
+$text-color: #070707;
+$yellow-color: #ffd916;
+$purple-color: #6e057c;
+$green-color: #88d557;
+$red-color: #f5644e;
+$darkGreen-color: #72bc53;
+$darkRed-color: #ed4930;
+$font-family-base: "Futura";
+
+body {
+  font-size: 15px;
+  font-family: $font-family-base !important;
+
+  header {
+    nav {
+      ul {
+        list-style-type: none;
+        display: flex;
+        flex-direction: row;
+        margin: 0;
+        li {
+          margin-left: 1em;
+          a {
+            color: $purple-color;
+            text-decoration: none;
+            font-weight: bold;
+          }
+        }
+      }
+    }
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: $yellow-color;
+    height: 60px;
+
+    p {
+      margin: 0;
+    }
+
+    a {
+      text-decoration: none;
+      color: $text-color;
+    }
+  }
+}
