@@ -1,6 +1,33 @@
-import { Splide } from "@splidejs/splide";
+const swiper1 = new Swiper(".swiper-1", {
+  // Optional parameters
+  direction: "horizontal",
+  loop: false,
+  autoplay: {
+    delay: 5000,
+    disableOnInteraction: false,
+  },
+  breakpoints: {
+    400: {
+      slidesPerView: 1,
+      spaceBetweenSlides: 100,
+    },
+    499: {
+      slidesPerView: 3,
+      spaceBetweenSlides: 100,
+    },
+    999: {
+      slidesPerView: 6,
+      spaceBetweenSlides: 50,
+    },
+  },
+  // If we need pagination
+  pagination: {
+    el: ".swiper-pagination1",
+  },
 
-console.log(Splide);
-
-// const Splide = require("@splidejs/splide");
-new Splide(".splide").mount();
+  // Navigation arrows
+  navigation: {
+    nextEl: ".swiper-button-next1",
+    prevEl: ".swiper-button-prev1",
+  },
+});

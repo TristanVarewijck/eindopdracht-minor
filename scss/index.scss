@@ -45,7 +45,7 @@
 $text-color: #070707;
 $yellow-color: #ffd916;
 $purple-color: #6e057c;
-$green-color: #88d557;
+$green-color: #7dcf49;
 $red-color: #f5644e;
 $darkGreen-color: #72bc53;
 $darkRed-color: #ed4930;
@@ -54,6 +54,11 @@ $font-family-base: "Futura";
 body {
   font-size: 15px;
   font-family: $font-family-base !important;
+  overflow-x: hidden;
+
+  a {
+    text-decoration: none;
+  }
 
   header {
     nav {
@@ -77,20 +82,90 @@ body {
 
   main {
     section {
-      height: 200px;
+      height: 350px;
       background-color: $green-color;
+      padding: 2em 0 0 0;
+
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide {
+            text-align: center;
+            color: $text-color;
+            img {
+              height: 200px;
+              width: auto;
+              border: 6px solid $darkGreen-color;
+              border-radius: 35px;
+              object-fit: cover;
+              transition: 200ms ease-in;
+            }
+            h2 {
+              margin-top: 10px;
+              font-size: 22px;
+            }
+          }
+        }
+
+        // .swiper-slide:hover > img {
+        //   margin-top: 1em;
+        //   margin-bottom: 0.5em;
+        //   transform: scale(1.05);
+        // }
+      }
+      .controls {
+        padding: 0 30px;
+        width: 100%;
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        z-index: 1;
+
+        div {
+          width: 50px;
+          height: 50px;
+          background: #ffffff;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 50%;
+          box-shadow: 0px 4px 18px rgba(129, 129, 129, 0.2);
+
+          img {
+            width: 20px;
+            height: auto;
+          }
+        }
+
+        div:last-of-type {
+          transform: rotate(-180deg);
+        }
+      }
     }
-    section:nth-last-of-type(2n) {
+    .products:nth-last-of-type(2n) {
       background-color: $red-color;
+
+      .swiper {
+        .swiper-wrapper {
+          .swiper-slide {
+            img {
+              border: 6px solid $darkRed-color;
+            }
+          }
+        }
+      }
     }
     .chatbot-container {
-      position: relative;
+      position: fixed;
       background: $yellow-color;
       height: 250px;
       display: flex;
       justify-content: space-evenly;
       flex-direction: row;
       align-items: center;
+      bottom: 0;
+      z-index: 1;
+      width: 100%;
 
       button {
         background: none;

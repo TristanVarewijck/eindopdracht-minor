@@ -36,7 +36,10 @@
 
 body {
   font-size: 15px;
-  font-family: "Futura" !important; }
+  font-family: "Futura" !important;
+  overflow-x: hidden; }
+  body a {
+    text-decoration: none; }
   body header nav {
     padding: 0 50px; }
     body header nav ul {
@@ -51,18 +54,59 @@ body {
           text-decoration: none;
           font-weight: bold; }
   body main section {
-    height: 200px;
-    background-color: #88d557; }
-  body main section:nth-last-of-type(2n) {
+    height: 350px;
+    background-color: #7dcf49;
+    padding: 2em 0 0 0; }
+    body main section .swiper .swiper-wrapper .swiper-slide {
+      text-align: center;
+      color: #070707; }
+      body main section .swiper .swiper-wrapper .swiper-slide img {
+        height: 200px;
+        width: auto;
+        border: 6px solid #72bc53;
+        border-radius: 35px;
+        object-fit: cover;
+        transition: 200ms ease-in; }
+      body main section .swiper .swiper-wrapper .swiper-slide h2 {
+        margin-top: 10px;
+        font-size: 22px; }
+    body main section .controls {
+      padding: 0 30px;
+      width: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: row;
+      justify-content: space-between;
+      z-index: 1; }
+      body main section .controls div {
+        width: 50px;
+        height: 50px;
+        background: #ffffff;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 50%;
+        box-shadow: 0px 4px 18px rgba(129, 129, 129, 0.2); }
+        body main section .controls div img {
+          width: 20px;
+          height: auto; }
+      body main section .controls div:last-of-type {
+        transform: rotate(-180deg); }
+  body main .products:nth-last-of-type(2n) {
     background-color: #f5644e; }
+    body main .products:nth-last-of-type(2n) .swiper .swiper-wrapper .swiper-slide img {
+      border: 6px solid #ed4930; }
   body main .chatbot-container {
-    position: relative;
+    position: fixed;
     background: #ffd916;
     height: 250px;
     display: flex;
     justify-content: space-evenly;
     flex-direction: row;
-    align-items: center; }
+    align-items: center;
+    bottom: 0;
+    z-index: 1;
+    width: 100%; }
     body main .chatbot-container button {
       background: none;
       outline: none;
