@@ -62,7 +62,7 @@ body {
       color: #070707; }
       body main section .swiper .swiper-wrapper .swiper-slide img {
         height: 200px;
-        width: auto;
+        width: 200px;
         border: 6px solid #72bc53;
         border-radius: 35px;
         object-fit: cover;

@@ -9,7 +9,7 @@
           <div class="swiper-wrapper">
             <%if (cleanData.length > 0) { %>
               <% cleanData.forEach(function(item) { %>
-                <a href="<%= item.link %>" class="swiper-slide">
+                <a href="boek/<%= item.id %>" class="swiper-slide">
                 <img src="<%= item.img %>" alt="Naam van boek: <%= item.title %>" />
                 <h2><%= item.title %></h2>
               </a>

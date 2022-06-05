@@ -93,7 +93,7 @@ body {
             color: $text-color;
             img {
               height: 200px;
-              width: auto;
+              width: 200px;
               border: 6px solid $darkGreen-color;
               border-radius: 35px;
               object-fit: cover;
@@ -166,7 +166,6 @@ body {
       bottom: 0;
       z-index: 1;
       width: 100%;
-
       button {
         background: none;
         outline: none;
@@ -180,18 +179,15 @@ body {
       }
     }
   }
-
   footer {
     display: flex;
     justify-content: center;
     align-items: center;
     background: $yellow-color;
     height: 30px;
-
     p {
       margin: 0;
     }
-
     a {
       text-decoration: none;
       color: $text-color;
