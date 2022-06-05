@@ -1,5 +1,4 @@
 const dataParser = (data) => {
-  console.log(data);
   const cleanedData = data.map((result) => {
     const myKeys = [
       "summaries",
@@ -12,6 +11,7 @@ const dataParser = (data) => {
       "detailLink",
     ];
 
+    // check if a key is absent or not
     myKeys.forEach((key) => {
       key in result ? result[key] : (result[key] = ["-"]);
     });
@@ -28,7 +28,6 @@ const dataParser = (data) => {
     };
   });
   //   cleanedData.length <= 0 ? displayEmptyState() : hideEmptyState();
-
   return cleanedData;
 };
 
