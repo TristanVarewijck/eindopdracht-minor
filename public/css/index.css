@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @font-face {
   font-family: "Futura";
   src: url("/assets/font/woff/Futura Bold font.woff") format("woff");
@@ -40,8 +41,20 @@ body {
   overflow-x: hidden; }
   body a {
     text-decoration: none; }
+  body h1 {
+    font-family: "Futura";
+    font-size: 2em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    letter-spacing: 0.02em; }
+  body h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 14px; }
   body header nav {
-    padding: 0 50px; }
+    padding: 0.5em 50px !important;
+    z-index: 1;
+    box-shadow: 0px 4px 12px rgba(177, 177, 177, 0.1); }
     body header nav ul {
       list-style-type: none;
       display: flex;
@@ -50,26 +63,30 @@ body {
       body header nav ul li {
         margin-left: 1em; }
         body header nav ul li a {
-          color: #6e057c;
+          color: #812c7c;
           text-decoration: none;
           font-weight: bold; }
   body main section {
-    height: 350px;
-    background-color: #7dcf49;
-    padding: 2em 0 0 0; }
+    position: relative;
+    padding: 60px 60px;
+    height: 425px;
+    background-color: #ffff;
+    box-shadow: 0px 2px 6px rgba(104, 104, 104, 0.1); }
     body main section .swiper .swiper-wrapper .swiper-slide {
       text-align: center;
       color: #070707; }
       body main section .swiper .swiper-wrapper .swiper-slide img {
         height: 200px;
         width: 200px;
-        border: 6px solid #72bc53;
         border-radius: 35px;
         object-fit: cover;
-        transition: 200ms ease-in; }
+        transition: 200ms ease-in;
+        box-shadow: 0px 4px 18px rgba(181, 181, 181, 0.15); }
       body main section .swiper .swiper-wrapper .swiper-slide h2 {
-        margin-top: 10px;
-        font-size: 22px; }
+        margin-top: 15px;
+        color: #812c7c;
+        font-weight: 500;
+        letter-spacing: 0.02em; }
     body main section .controls {
       padding: 0 30px;
       width: 100%;
@@ -77,7 +94,10 @@ body {
       display: flex;
       flex-direction: row;
       justify-content: space-between;
-      z-index: 1; }
+      z-index: 1;
+      position: absolute;
+      bottom: 10%;
+      padding: 0 15px; }
       body main section .controls div {
         width: 50px;
         height: 50px;
@@ -93,33 +113,51 @@ body {
       body main section .controls div:last-of-type {
         transform: rotate(-180deg); }
   body main .products:nth-last-of-type(2n) {
-    background-color: #f5644e; }
-    body main .products:nth-last-of-type(2n) .swiper .swiper-wrapper .swiper-slide img {
-      border: 6px solid #ed4930; }
+    background-color: rgba(216, 18, 125, 0.05);
+    background-image: url("/assets/images/pattern-1.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position-y: 0%; }
+  body main section.product:last-of-type {
+    background-color: green; }
   body main .chatbot-container {
     position: fixed;
-    background: #ffd916;
-    height: 250px;
-    display: flex;
-    justify-content: space-evenly;
-    flex-direction: row;
-    align-items: center;
+    background: #fff0a5;
+    height: 10px;
     bottom: 0;
     z-index: 1;
-    width: 100%; }
-    body main .chatbot-container button {
-      background: none;
-      outline: none;
-      border: 6px solid #ffffff;
-      border-radius: 50px;
-      padding: 25px; }
-      body main .chatbot-container button img {
-        width: 50px; }
+    width: 100%;
+    box-shadow: 0px -4px 12px rgba(150, 150, 150, 0.1);
+    background-image: url("/assets/images/pattern-1.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: normal; }
+    body main .chatbot-container img {
+      position: absolute;
+      margin: 0 auto;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      width: 250px;
+      height: auto; }
+    body main .chatbot-container h1 {
+      width: fit-content;
+      text-align: center;
+      margin: 0;
+      position: absolute;
+      top: -150%;
+      background: #ffffff;
+      padding: 1em;
+      margin: 0 auto;
+      left: 25%;
+      right: 0;
+      border-radius: 50px 50px 50px 0px;
+      box-shadow: 0px 4px 12px rgba(104, 104, 104, 0.15); }
   body footer {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ffd916;
+    background: #fff0a5;
     height: 30px; }
     body footer p {
       margin: 0; }

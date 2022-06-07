@@ -1,4 +1,5 @@
-// font
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
+// font-family: 'Inter', sans-serif;
 @font-face {
   font-family: "Futura";
   src: url("/assets/font/woff/Futura\ Bold\ font.woff") format("woff");
@@ -43,12 +44,12 @@
 
 // colors
 $text-color: #070707;
-$yellow-color: #ffd916;
-$purple-color: #6e057c;
-$green-color: #7dcf49;
-$red-color: #f5644e;
-$darkGreen-color: #72bc53;
-$darkRed-color: #ed4930;
+$purple-color: #812c7c;
+$blue-color: #00a3da;
+$green-color: #24a763;
+$pink-color: #d8127d;
+$red-color: #d8232a;
+$yellow-color: #fff0a5;
 $font-family-base: "Futura";
 
 body {
@@ -60,14 +61,31 @@ body {
     text-decoration: none;
   }
 
+  h1 {
+    font-family: $font-family-base;
+    font-size: 2em;
+    margin-left: 1em;
+    margin-bottom: 1em;
+    font-weight: bold;
+    letter-spacing: 0.02em;
+  }
+
+  h2 {
+    font-family: "Inter", sans-serif;
+    font-size: 14px;
+  }
+
   header {
     nav {
-      padding: 0 50px;
+      padding: 0.5em 50px !important;
+      z-index: 1;
+      box-shadow: 0px 4px 12px rgba(177, 177, 177, 0.1);
       ul {
         list-style-type: none;
         display: flex;
         flex-direction: row;
         margin: 0;
+
         li {
           margin-left: 1em;
           a {
@@ -82,10 +100,12 @@ body {
 
   main {
     section {
-      height: 350px;
-      background-color: $green-color;
-      padding: 2em 0 0 0;
-
+      position: relative;
+      padding: 60px 60px;
+      height: 425px;
+      background-color: #ffff;
+      // padding: 2em 0 0 0;
+      box-shadow: 0px 2px 6px rgba(104, 104, 104, 0.1);
       .swiper {
         .swiper-wrapper {
           .swiper-slide {
@@ -94,23 +114,19 @@ body {
             img {
               height: 200px;
               width: 200px;
-              border: 6px solid $darkGreen-color;
               border-radius: 35px;
               object-fit: cover;
               transition: 200ms ease-in;
+              box-shadow: 0px 4px 18px rgba(181, 181, 181, 0.15);
             }
             h2 {
-              margin-top: 10px;
-              font-size: 22px;
+              margin-top: 15px;
+              color: $purple-color;
+              font-weight: 500;
+              letter-spacing: 0.02em;
             }
           }
         }
-
-        // .swiper-slide:hover > img {
-        //   margin-top: 1em;
-        //   margin-bottom: 0.5em;
-        //   transform: scale(1.05);
-        // }
       }
       .controls {
         padding: 0 30px;
@@ -120,7 +136,9 @@ body {
         flex-direction: row;
         justify-content: space-between;
         z-index: 1;
-
+        position: absolute;
+        bottom: 10%;
+        padding: 0 15px;
         div {
           width: 50px;
           height: 50px;
@@ -143,39 +161,53 @@ body {
       }
     }
     .products:nth-last-of-type(2n) {
-      background-color: $red-color;
-
-      .swiper {
-        .swiper-wrapper {
-          .swiper-slide {
-            img {
-              border: 6px solid $darkRed-color;
-            }
-          }
-        }
-      }
+      background-color: rgba(216, 18, 125, 0.05);
+      background-image: url("/assets/images/pattern-1.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      background-position-y: 0%;
     }
+
+    section.product:last-of-type {
+      background-color: green;
+    }
+
     .chatbot-container {
       position: fixed;
       background: $yellow-color;
-      height: 250px;
-      display: flex;
-      justify-content: space-evenly;
-      flex-direction: row;
-      align-items: center;
+      height: 10px;
       bottom: 0;
       z-index: 1;
       width: 100%;
-      button {
-        background: none;
-        outline: none;
-        border: 6px solid #ffffff;
-        border-radius: 50px;
-        padding: 25px;
+      box-shadow: 0px -4px 12px rgba(150, 150, 150, 0.1);
+      background-image: url("/assets/images/pattern-1.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: normal;
 
-        img {
-          width: 50px;
-        }
+      img {
+        position: absolute;
+        margin: 0 auto;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 250px;
+        height: auto;
+      }
+
+      h1 {
+        width: fit-content;
+        text-align: center;
+        margin: 0;
+        position: absolute;
+        top: -150%;
+        background: #ffffff;
+        padding: 1em;
+        margin: 0 auto;
+        left: 25%;
+        right: 0;
+        border-radius: 50px 50px 50px 0px;
+        box-shadow: 0px 4px 12px rgba(104, 104, 104, 0.15);
       }
     }
   }
