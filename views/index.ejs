@@ -1,118 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-  <%- include("partials/head") %>
-  <body>
-    <%- include("partials/header") %>
-    <main>
-      <section class="products winter">
-        <h1>Winterboeken</h1>
-        <div class="swiper-1 swiper">
-          <div class="swiper-wrapper">
-            <%if (responseOne.length > 0) { %>
-              <% responseOne.forEach(function(item) { %>
-                <a href="boek/<%= item.id %>" class="swiper-slide">
-                <img src="<%= item.img %>" alt="Naam van boek: <%= item.title %>" />
-                <h2><%= item.title %></h2>
-              </a>
-             <% }); %> 
-           <% } %>
-        </div>
-        <div class="controls">
-          <div class="swiper-button-prev1"><img src="assets/icons/arrow.svg" alt="icon-arrow-previous"></div>
-          <div class="swiper-button-next1"><img src="assets/icons/arrow.svg" alt="icon-arrow-next"></div>
-        </div>
-      </section>
+<main>
+  <div class="zerostate">
+    <section>
+      <p>Tik op mij!</p>
+      <img class="leeuw" src="img/leeuw.svg" alt="Leeuw de helper" />
+    </section>
 
-      <section class="products spannend">
-        <h1>Durf jij deze boeken te lezen?</h1>
-        <div class="swiper-1 swiper">
-          <div class="swiper-wrapper">
-            <%if (responseTwo.length > 0) { %>
-              <% responseTwo.forEach(function(item) { %>
-                <a href="boek/<%= item.id %>" class="swiper-slide">
-                <img src="<%= item.img %>" alt="Naam van boek: <%= item.title %>" />
-                <h2><%= item.title %></h2>
-              </a>
-             <% }); %> 
-           <% } %>
-        </div>
-        <div class="controls">
-          <div class="swiper-button-prev1"><img src="assets/icons/arrow.svg" alt="icon-arrow-previous"></div>
-          <div class="swiper-button-next1"><img src="assets/icons/arrow.svg" alt="icon-arrow-next"></div>
-        </div>
-      </section>
+    <section class="secondstate">
+      <div>
+        <button class="keuzebtn" id="boekenbtn" value="boeken">
+          <img src="img/boeken.svg" alt="Knop met boeken" />
+        </button>
+        <button class="keuzebtn" id="videosbtn" value="videos">
+          <img src="img/videos.svg" alt="Knop met videos" />
+        </button>
+      </div>
+    </section>
 
-      <section class="products monsters">
-        <h1>Wordt vrienden met Monsters!</h1>
-        <div class="swiper-1 swiper">
-          <div class="swiper-wrapper">
-            <%if (responseThree.length > 0) { %>
-              <% responseThree.forEach(function(item) { %>
-                <a href="boek/<%= item.id %>" class="swiper-slide">
-                <img src="<%= item.img %>" alt="Naam van boek: <%= item.title %>" />
-                <h2><%= item.title %></h2>
-              </a>
-             <% }); %> 
-           <% } %>
-        </div>
-        <div class="controls">
-          <div class="swiper-button-prev1"><img src="assets/icons/arrow.svg" alt="icon-arrow-previous"></div>
-          <div class="swiper-button-next1"><img src="assets/icons/arrow.svg" alt="icon-arrow-next"></div>
-        </div>
-      </section>
-
-      <section class="products grappig">
-        <h1>Ga stuk van het lachen</h1>
-        <div class="swiper-1 swiper">
-          <div class="swiper-wrapper">
-            <%if (responseFour.length > 0) { %>
-              <% responseFour.forEach(function(item) { %>
-                <a href="boek/<%= item.id %>" class="swiper-slide">
-                <img src="<%= item.img %>" alt="Naam van boek: <%= item.title %>" />
-                <h2><%= item.title %></h2>
-              </a>
-             <% }); %> 
-           <% } %>
-        </div>
-        <div class="controls">
-          <div class="swiper-button-prev1"><img src="assets/icons/arrow.svg" alt="icon-arrow-previous"></div>
-          <div class="swiper-button-next1"><img src="assets/icons/arrow.svg" alt="icon-arrow-next"></div>
-        </div>
-      </section>
-
-      <section class="products liefde">
-        <h1>Wordt verliefd op deze liefdes boeken</h1>
-        <div class="swiper-1 swiper">
-          <div class="swiper-wrapper">
-            <%if (responseFive.length > 0) { %>
-              <% responseFive.forEach(function(item) { %>
-                <a href="boek/<%= item.id %>" class="swiper-slide">
-                <img src="<%= item.img %>" alt="Naam van boek: <%= item.title %>" />
-                <h2><%= item.title %></h2>
-              </a>
-             <% }); %> 
-           <% } %>
-        </div>
-        <div class="controls">
-          <div class="swiper-button-prev1"><img src="assets/icons/arrow.svg" alt="icon-arrow-previous"></div>
-          <div class="swiper-button-next1"><img src="assets/icons/arrow.svg" alt="icon-arrow-next"></div>
-        </div>
-      </section>
-      <!-- <div class="chatbot-container">
-        <button><img src="assets/icons/books.svg" alt="book-switch" /></button>
-        <div class="chatbot-wrapper">
-          <h2>Klik op mij!</h2>
-          <button>
-            <img src="assets/images/example.webp" alt="chatbot-activator" />
-          </button>
-        </div>
-        <button><img src="assets/icons/film.svg" alt="film-switch" /></button>
-      </div> -->
-
-      <%- include("partials/chatbot") %>
-    </main>
-    <%- include("partials/footer") %>
-    <script>
-    </script>
-  </body>
-</html>
+    <section class="thirdstate">
+      <p id="convert_text">...</p>
+    </section>
+  </div>
+</main>

@@ -1,0 +1,120 @@
+* {
+  padding: 0;
+  margin: 0 auto;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.zerostate {
+  margin-top: 85vh;
+  width: 100%;
+  height: 100px;
+  background: #fde672;
+}
+
+.zerostate section:first-child {
+  margin: auto;
+  width: 1200px;
+  height: 100%;
+  text-align: center;
+  position: relative;
+}
+
+.zerostate section:first-child p {
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 999;
+  top: -120px;
+}
+
+.zerostate section:first-child img {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 250px;
+  height: auto;
+  cursor: pointer;
+  z-index: 9999;
+}
+.zerostate section:first-child img:hover {
+  width: 330px;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.groterleeuw {
+  width: 500px !important;
+}
+
+.secondstate {
+  display: none;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  background: #fde672;
+}
+
+.secondopen {
+  display: block;
+}
+
+.secondstate div {
+  width: 800px;
+  height: 100%;
+  position: relative;
+}
+
+.secondstate div button {
+  width: 200px;
+  height: 200px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  position: absolute;
+  top: 100px;
+  display: block;
+  text-decoration: none;
+}
+
+.secondstate div button:nth-child(1) {
+  left: 0;
+}
+
+.secondstate div button:nth-child(2) {
+  right: 0;
+}
+
+.secondstate div button:hover {
+  width: 220px;
+  height: 220px;
+  transition: 0.3s;
+}
+
+.secondstate div button img {
+  width: 100%;
+  height: auto;
+}
+
+.thirdstate {
+  display: none;
+}
+
+.thirdopen {
+  display: block;
+  position: absolute;
+  top: 0;
+  z-index: 999;
+  height: 100%;
+  width: 100%;
+  background: #fde672;
+  text-align: center;
+}
+
+.thirdopen p {
+  font-size: 3em;
+  margin-top: 50px;
+}
