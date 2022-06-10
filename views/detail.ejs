@@ -7,37 +7,38 @@
       <section class="content">
         <a class="goback" href="/"> Terug</a>
 
+        <%if (item.length > 0) { %> <% item.forEach(function(item) { %>
         <div class="heading">
           <div class="card img-container">
-            <img src="/assets/images/lion.png" class="card-img-top" alt="..." />
+            <img
+              src="<%= item.img %>"
+              class="card-img-top"
+              alt="<%= item.title %>"
+            />
           </div>
 
           <div>
-            <h1>Hello World!</h1>
-            <p>Auteurs: Tristan Varewijck</p>
-            <p>Jaar: 2017</p>
+            <h1><%= item.title %></h1>
+            <p><%= item.authors %></p>
+            <p><%= item.year %></p>
+
+            <div class="helper">
+              <p class="text-cloud">
+                <span>Hey daar! </span>Zal ik een stukje voorlezen?
+              </p>
+
+              <div class="button-wrapper">
+                <button>Ja!</button>
+                <button>Nee!</button>
+              </div>
+
+              <img src="/assets/images/lion.png" alt="little-helper" />
+              <p class="text"><%= item.summary %></p>
+            </div>
           </div>
-        </div>
-
-        <div class="helper">
-          <p class="text-cloud">
-            <span>Hey daar!</span>Zal ik een stukje voorlezen?
-          </p>
-
-          <div class="button-wrapper">
-            <button>Ja!</button>
-            <button>Nee!</button>
-          </div>
-
-          <img src="/assets/images/lion.png" alt="little-helper" />
-          <p class="text">
-            Het is winter en Muis heeft honger. Hij ontdekt een heerlijke
-            ruikende doos in een huisje in het bos ontdekt, maar hij kan er niet
-            bij. Ook de andere dieren lukt het niet. Dan is de doos ineens
-            verdwenen. Wat zal ermee gaan gebeuren?
-          </p>
         </div>
       </section>
+      <% }); %> <% } %>
 
       <p>Dit boek reserveren?</p>
       <a href="<%= item.link %>" class="external-link">Reserveren</a>

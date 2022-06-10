@@ -158,12 +158,15 @@ body {
     padding: 10px 40px;
     font-size: 18px;
     border: 3px solid #ffffff;
-    filter: drop-shadow(0px 4px 8px rgba(103, 103, 103, 0.2));
+    filter: drop-shadow(0px 4px 8px rgba(103, 103, 103, 0.15));
     border-radius: 10px;
     letter-spacing: 0.015em;
     color: #ffffff;
     font-family: "Futura";
-    font-weight: bold; }
+    font-weight: bold;
+    transition: 200ms ease-in-out; }
+  body main.detail-template a:hover {
+    filter: none; }
   body main.detail-template .content {
     position: relative;
     margin-top: 1em;
@@ -171,17 +174,49 @@ body {
     width: 98%;
     border-radius: 20px;
     left: 50%;
-    height: 1000px;
-    transform: translateX(-50%); }
+    height: fit-content;
+    transform: translateX(-50%);
+    margin-bottom: 3em; }
+    body main.detail-template .content .helper .text-cloud {
+      background: #fff;
+      width: fit-content;
+      padding: 0.5em 1.5em;
+      box-shadow: 0px 4px 18px rgba(200, 200, 200, 0.2);
+      border-radius: 99px 99px 0px 99px; }
+      body main.detail-template .content .helper .text-cloud span {
+        color: #812c7c;
+        font-weight: 600; }
+    body main.detail-template .content .helper .button-wrapper button {
+      background: #72bc53;
+      color: #fff;
+      font-weight: 500;
+      border: 2px solid #ffffff;
+      box-shadow: 0px 4px 8px rgba(103, 103, 103, 0.15);
+      border-radius: 6px;
+      text-align: center;
+      width: 100px;
+      height: 50px;
+      transition: 200ms ease-in-out; }
+    body main.detail-template .content .helper .button-wrapper button:last-of-type {
+      background: #d8232a; }
+    body main.detail-template .content .helper .button-wrapper button:hover {
+      box-shadow: none; }
+    body main.detail-template .content .helper img {
+      width: 150px; }
+    body main.detail-template .content .helper .text {
+      background: #fff;
+      padding: 0.5em 1.5em;
+      border-radius: 6px;
+      box-shadow: 0px 4px 18px rgba(200, 200, 200, 0.2); }
     body main.detail-template .content .heading {
       margin-top: 3em;
       display: flex;
       flex-direction: row;
+      align-items: center;
       gap: 5em; }
       body main.detail-template .content .heading .card {
-        width: 500px; }
+        width: 1500px; }
         body main.detail-template .content .heading .card div img {
-          width: 300px !important;
           height: auto; }
       body main.detail-template .content .heading h1 {
         margin: 0 0 0.5em 0;

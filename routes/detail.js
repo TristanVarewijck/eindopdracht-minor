@@ -12,10 +12,7 @@ router.get("/boek/:id", async function (req, res, next) {
   })
     .then((res) => dataParser(res.data.results))
     .then((cleanData) => {
-      console.log(cleanData);
-      res.render("detail", {
-        item: cleanData,
-      });
+      res.render("detail", { item: cleanData });
     })
     .catch((err) => {
       console.log(err);
