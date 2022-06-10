@@ -39,6 +39,61 @@ for (let i = 0; i < keuzebtn.length; i++) {
       setTimeout(function () {
         recognition.start();
       }, 2000);
+
+      setTimeout(function () {
+        recognition.stop();
+        var uitkomst = document.querySelector("#convert_text").innerHTML;
+        console.log(keuzebtn[i].value);
+
+        if (keuzebtn[i].value == "book") {
+          console.log("is boek");
+          var prentboek = "classification:prentenboek%20";
+
+          console.log(uitkomst + keuze + prentboek);
+
+          let data = {
+            uitkomst,
+            keuze,
+            prentboek,
+          };
+          JSON.stringify(data);
+          console.log(data);
+
+          fetch("/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }).then((res) => {
+            console.log("Request complete! response:", res);
+          });
+        } else {
+          console.log("is geen boek");
+
+          var prentboek = "";
+
+          console.log(uitkomst + keuze + prentboek);
+
+          let data = {
+            uitkomst,
+            keuze,
+            prentboek,
+          };
+          JSON.stringify(data);
+          console.log(data);
+
+          fetch("/", {
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data),
+          }).then((res) => {
+            console.log("Request complete! response:", res);
+          });
+        }
+      }, 5000);
     }
   });
 }
