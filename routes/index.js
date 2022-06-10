@@ -11,6 +11,7 @@ let monsters = `${process.env.DATA_Q}%20monsters&authorization=${process.env.DAT
 let grappig = `${process.env.DATA_Q}%20grappig&authorization=${process.env.DATA_AUTH}&page=1&refine=true&output=json`;
 let liefde = `${process.env.DATA_Q}%20liefde&authorization=${process.env.DATA_AUTH}&page=1&refine=true&output=json`;
 
+console.log(winter);
 let requestOne = axios.get(winter);
 let requestTwo = axios.get(spannend);
 let requestThree = axios.get(monsters);
