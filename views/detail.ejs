@@ -9,41 +9,54 @@
 
         <%if (item.length > 0) { %> <% item.forEach(function(item) { %>
         <div class="heading">
-          <div class="card img-container">
-            <img
-              src="<%= item.img %>"
-              class="card-img-top"
-              alt="<%= item.title %>"
-            />
+          <div class="img-container">
+            <img src="<%= item.img %>" alt="<%= item.title %>" />
           </div>
 
           <div>
-            <h1><%= item.title %></h1>
-            <p><%= item.authors %></p>
-            <p><%= item.year %></p>
+            <h1 class="item-title"><%= item.title %></h1>
+            <p class="item-author">Auteur(s): <%= item.authors %></p>
+            <p class="item-year">Jaar: <%= item.year %></p>
 
-            <div class="helper">
-              <p class="text-cloud">
-                <span>Hey daar! </span>Zal ik een stukje voorlezen?
-              </p>
+            <div class="helper-section">
+              <div class="mini-grid">
+    
+                <div class="call-to-action">
 
-              <div class="button-wrapper">
-                <button>Ja!</button>
-                <button>Nee!</button>
-              </div>
+                <div class="clip-text">
+                  <p class="text-cloud">
+                    <span>Hey daar! </span>Zal ik een stukje voorlezen?
+                  </p>
+                </div>
+                
 
-              <img src="/assets/images/lion.png" alt="little-helper" />
-              <p class="text"><%= item.summary %></p>
+                <div class="button-wrapper">
+                  <button class="speakButton">Ja!</button>
+                  <button class="cancelButton hidden">Stop!</button>
+                </div>
+                </div>
+
+                <div class="lion-container">
+                  <img
+                  src="/assets/images/lion.png"
+                  class="little-helper"
+                  alt="little-helper"
+                />
+                </div>
+                
             </div>
+            <p class="text speechText"><%= item.summary %></p>
           </div>
         </div>
       </section>
-      <% }); %> <% } %>
 
-      <p>Dit boek reserveren?</p>
-      <a href="<%= item.link %>" class="external-link">Reserveren</a>
+      <div class="reserveAction">
+        <p>Dit boek reserveren?</p>
+        <a href="<%= item.link %>" class="external-link">Reserveren</a>
+      </div>
+      <% }); %> <% } %>
     </main>
 
-    <!-- <%- include("partials/footer") %> -->
+    <%- include("partials/footer") %>
   </body>
 </html>
