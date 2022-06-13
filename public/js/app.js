@@ -45,6 +45,7 @@ const speechText = document.querySelector(".speechText");
 const helper = document.querySelector(".little-helper");
 const textCloud = document.querySelector(".text-cloud");
 
+console.log(speechText.innerHTML);
 speakButton.addEventListener("click", () => {
   cancelButton.addEventListener("click", function () {
     synth.cancel();
@@ -81,3 +82,11 @@ speakButton.addEventListener("click", () => {
 
 // animations (gsap)
 gsap.fromTo(".clip-text p", { x: 350 }, { x: 0, duration: 0.8, delay: 1 });
+
+// function audio() {
+//   var audio1 = new Audio("/assets/audio/detail.mp3");
+//   // // audio1.muted = true;
+//   // audio1.autoplay = true;
+//   console.log("hoi");
+//   // audio1.play();
+// }
