@@ -57,6 +57,7 @@ body {
   font-size: 15px;
   font-family: "inter", sans-serif !important;
   overflow-x: hidden;
+  overflow-y: hidden;
 
   a {
     text-decoration: none;
@@ -79,7 +80,7 @@ body {
   header {
     nav {
       padding: 0.5em 50px !important;
-      z-index: 1;
+      z-index: 2;
       box-shadow: 0px 4px 12px rgba(177, 177, 177, 0.1);
       ul {
         list-style-type: none;
@@ -210,6 +211,95 @@ body {
         right: 0;
         border-radius: 50px 50px 50px 0px;
         box-shadow: 0px 4px 12px rgba(104, 104, 104, 0.15);
+      }
+    }
+  }
+
+  // onboarding
+  .overlay {
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+    position: absolute;
+    background: white;
+    top: 0;
+    bottom: 0;
+    gap: 4px;
+
+    h2 {
+      width: 100%;
+      text-align: center;
+      font-size: 32px;
+      transform: translateY(150px);
+    }
+
+    .choises {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      ul {
+        position: absolute;
+        list-style-type: none;
+        margin: 0 auto;
+        padding: 0;
+      }
+
+      li {
+        display: inline-block;
+      }
+      input[type="checkbox"][id^="myCheckbox"] {
+        display: none;
+      }
+
+      label {
+        border: 1px solid #fff;
+        padding: 10px;
+        display: block;
+        position: relative;
+        margin: 10px;
+        cursor: pointer;
+      }
+
+      label:before {
+        background-color: white;
+        color: white;
+        content: " ";
+        display: block;
+        border-radius: 50%;
+        border: 1px solid grey;
+        position: absolute;
+        top: -5px;
+        left: -5px;
+        width: 25px;
+        height: 25px;
+        text-align: center;
+        line-height: 28px;
+        transition-duration: 0.4s;
+        transform: scale(0);
+      }
+
+      label img {
+        height: 250px;
+        width: auto;
+        transition-duration: 0.2s;
+        transform-origin: 50% 50%;
+      }
+
+      :checked + label {
+        border-color: $yellow-color;
+      }
+
+      :checked + label:before {
+        content: "✓";
+        background-color: $green-color;
+        transform: scale(1);
+      }
+
+      :checked + label img {
+        transform: scale(0.9);
+        z-index: -1;
       }
     }
   }
@@ -384,82 +474,6 @@ body {
     }
   }
 
-  .overlay {
-    width: 100%;
-    height: 100%;
-    z-index: 3;
-    position: absolute;
-    background: white;
-    top: 0;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-
-    ul {
-      position: absolute;
-      list-style-type: none;
-      margin: 0 auto;
-      padding: 0;
-    }
-
-    li {
-      display: inline-block;
-    }
-    input[type="checkbox"][id^="myCheckbox"] {
-      display: none;
-    }
-
-    label {
-      border: 1px solid #fff;
-      padding: 10px;
-      display: block;
-      position: relative;
-      margin: 10px;
-      cursor: pointer;
-    }
-
-    label:before {
-      background-color: white;
-      color: white;
-      content: " ";
-      display: block;
-      border-radius: 50%;
-      border: 1px solid grey;
-      position: absolute;
-      top: -5px;
-      left: -5px;
-      width: 25px;
-      height: 25px;
-      text-align: center;
-      line-height: 28px;
-      transition-duration: 0.4s;
-      transform: scale(0);
-    }
-
-    label img {
-      height: 250px;
-      width: auto;
-      transition-duration: 0.2s;
-      transform-origin: 50% 50%;
-    }
-
-    :checked + label {
-      border-color: $yellow-color;
-    }
-
-    :checked + label:before {
-      content: "✓";
-      background-color: $green-color;
-      transform: scale(1);
-    }
-
-    :checked + label img {
-      transform: scale(0.9);
-      z-index: -1;
-    }
-  }
-
   footer {
     display: flex;
     justify-content: center;
@@ -508,11 +522,9 @@ body {
   0%,
   100% {
     transform: translateY(0);
-    // bottom: 0;
   }
   50% {
     transform: translateY(10px);
-    // bottom: 100px;
   }
 }
 
@@ -520,19 +532,13 @@ body {
   0%,
   100% {
     border: 1px solid #fff;
-
-    // bottom: 0;
   }
   50% {
     border: 1px solid $purple-color;
-
-    // transform: translateY(15px);
-    // bottom: 100px;
   }
 }
 
 // state classes
-
 .glowing {
   opacity: 1;
   animation: borderGlow 1s linear infinite;

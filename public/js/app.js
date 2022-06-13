@@ -82,12 +82,7 @@ speakButton.addEventListener("click", () => {
 
 // animations (gsap)
 gsap.fromTo(".clip-text p", { x: 350 }, { x: 0, duration: 0.8, delay: 1 });
-
-function overlayAnimation() {
-  gsap.fromTo(".clip-text p", { x: 350 }, { x: 0, duration: 0.8, delay: 1 });
-  gsap.fromTo(".clip-text p", { x: 350 }, { x: 0, duration: 0.8, delay: 1 });
-  gsap.fromTo(".clip-text p", { x: 350 }, { x: 0, duration: 0.8, delay: 1 });
-}
+// gsap.fromTo(".overlay", { x: 1000 }, { x: 0, duration: 0.8, delay: 1 });
 
 // function audio() {
 //   var audio1 = new Audio("/assets/audio/detail.mp3");
