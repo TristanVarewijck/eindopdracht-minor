@@ -40,7 +40,7 @@ body {
   font-size: 15px;
   font-family: "inter", sans-serif !important;
   overflow-x: hidden;
-  overflow-y: hidden; }
+  overflow-y: scroll; }
   body a {
     text-decoration: none; }
   body h1 {
@@ -92,7 +92,6 @@ body {
     body main section .controls {
       padding: 0 30px;
       width: 100%;
-      position: relative;
       display: flex;
       flex-direction: row;
       justify-content: space-between;
@@ -161,7 +160,6 @@ body {
     z-index: 1;
     position: absolute;
     background: white;
-    top: 0;
     bottom: 0;
     gap: 4px; }
     body .overlay h2 {
@@ -388,6 +386,12 @@ body {
   50% {
     border: 1px solid #812c7c; } }
 
+@keyframes disolveUp {
+  0% {
+    top: 0; }
+  100% {
+    top: -100%; } }
+
 .glowing {
   opacity: 1;
   animation: borderGlow 1s linear infinite; }
@@ -401,3 +405,12 @@ body {
 .opacity {
   opacity: 0;
   transition: 200ms ease-in; }
+
+.goUp {
+  animation: disolveUp 1000ms 300ms linear 1 forwards; }
+
+.noScroll {
+  overflow-y: hidden; }
+
+.scroll {
+  overflow-y: scroll; }

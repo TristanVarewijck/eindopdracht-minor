@@ -44,6 +44,26 @@ const speakButton = document.querySelector(".speakButton");
 const speechText = document.querySelector(".speechText");
 const helper = document.querySelector(".little-helper");
 const textCloud = document.querySelector(".text-cloud");
+const overlay = document.querySelector(".overlay");
+const choises = document.querySelectorAll(".choises ul li input");
+const body = document.querySelector("body");
+
+body.classList.add("noScroll");
+window.scrollTo(0, 0);
+for (let i = 0; i < choises.length; i++) {
+  choises[i].addEventListener("change", function () {
+    if (this.checked === true) {
+      overlay.classList.add("goUp");
+
+      setTimeout(function () {
+        overlay.classList.add("hidden");
+        body.classList.remove("noScroll");
+      }, 1500);
+    } else if (this.checked === false) {
+      console.log("not checked");
+    }
+  });
+}
 
 console.log(speechText.innerHTML);
 speakButton.addEventListener("click", () => {
@@ -82,7 +102,8 @@ speakButton.addEventListener("click", () => {
 
 // animations (gsap)
 gsap.fromTo(".clip-text p", { x: 350 }, { x: 0, duration: 0.8, delay: 1 });
-// gsap.fromTo(".overlay", { x: 1000 }, { x: 0, duration: 0.8, delay: 1 });
+
+// gsap.to(".overlay", { top: "-100%" }, { duration: 0.8, delay: 1 });
 
 // function audio() {
 //   var audio1 = new Audio("/assets/audio/detail.mp3");
