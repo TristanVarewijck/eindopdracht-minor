@@ -4,40 +4,7 @@ import {
   SpeechSynthesisUtterance,
 } from "./partials/voiceSynthesisConfig.js";
 
-const swiper1 = new Swiper(".swiper-1", {
-  // Optional parameters
-  direction: "horizontal",
-  loop: true,
-  autoplay: {
-    delay: 5000,
-    disableOnInteraction: false,
-  },
-  breakpoints: {
-    400: {
-      slidesPerView: 1,
-      spaceBetweenSlides: 100,
-    },
-    499: {
-      slidesPerView: 3,
-      spaceBetweenSlides: 100,
-    },
-    999: {
-      slidesPerView: 5,
-      spaceBetweenSlides: 50,
-    },
-  },
-  // If we need pagination
-  pagination: {
-    el: ".swiper-pagination1",
-  },
-
-  // Navigation arrows
-  navigation: {
-    nextEl: ".swiper-button-next1",
-    prevEl: ".swiper-button-prev1",
-  },
-});
-
+import { swiper1 } from "./partials/caroussel.js";
 // speaking event
 const cancelButton = document.querySelector(".cancelButton");
 const speakButton = document.querySelector(".speakButton");
@@ -46,26 +13,40 @@ const helper = document.querySelector(".little-helper");
 const textCloud = document.querySelector(".text-cloud");
 const overlay = document.querySelector(".overlay");
 const choises = document.querySelectorAll(".choises ul li input");
-const body = document.querySelector("body");
+const homepage = document.querySelector(".homepage");
 
-body.classList.add("noScroll");
-window.scrollTo(0, 0);
+// caroussels
+swiper1;
+
+// imgs
+const mascotte = document.querySelector(".mascotte");
+
 for (let i = 0; i < choises.length; i++) {
+  window.scrollTo(0, 0);
+  homepage.classList.add("noScroll");
   choises[i].addEventListener("change", function () {
     if (this.checked === true) {
       overlay.classList.add("goUp");
+      console.log(this.value);
+      let characther = `http://localhost:3500/assets/images/${this.value}.png`;
 
+      // mascotte
+      window.localStorage.setItem("character", characther);
+      mascotte.src = characther;
+
+      // hide overlay from UI so i get no bug with it...
       setTimeout(function () {
         overlay.classList.add("hidden");
-        body.classList.remove("noScroll");
+        homepage.classList.remove("noScroll");
       }, 1500);
-    } else if (this.checked === false) {
-      console.log("not checked");
     }
   });
 }
 
-console.log(speechText.innerHTML);
+let characterLink = window.localStorage.getItem("character");
+mascotte.src = characterLink;
+
+// Text to voice
 speakButton.addEventListener("click", () => {
   cancelButton.addEventListener("click", function () {
     synth.cancel();

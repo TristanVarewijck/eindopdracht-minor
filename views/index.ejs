@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <%- include("partials/head") %>
-  <body>
+  <body class="homepage">
     <%- include("partials/header") %>
     <main>
       <section class="products winter">
@@ -109,22 +109,24 @@
       <div class="choises">
         <ul>
           <li>
-            <input type="checkbox" id="myCheckbox1" name="myCheckbox1" value="Lion"/>
+            <input type="radio" id="myCheckbox1" name="myRadio" value="Lion"/>
             <label for="myCheckbox1"><img src="/assets/images/lion.png" /></label>
+            <h4>Lex de Leeuw</h4>
           </li>
           <li>
         
-            <input type="checkbox" id="myCheckbox2" name="myCheckbox2" value="Robot"/>
-            <label for="myCheckbox2"><img src="/assets/images/monster.png" /></label>
+            <input type="radio" id="myCheckbox2" name="myRadio" value="Robot"/>
+            <label for="myCheckbox2"><img src="/assets/images/robot.png" /></label>
+            <h4>Rob de Robot</h4>
           </li>
           <li>
         
-            <input type="checkbox" id="myCheckbox3" name="myCheckbox3" value="Monster" />
-            <label for="myCheckbox3"><img src="/assets/images/lion.png" /></label>
+            <input type="radio" id="myCheckbox3" name="myRadio" value="Monster" />
+            <label for="myCheckbox3"><img src="/assets/images/monster.png" /></label>
+            <h4>Max het Monster</h4>
           </li>
         </ul>
       </div>
-      
     </div>
     <%- include("partials/footer") %>
     <script>

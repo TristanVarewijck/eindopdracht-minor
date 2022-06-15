@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%- include("partials/head") %>
+  <body>
+    <%- include("partials/header") %>
+    <main class="search">
+      <div class="zerostate">
+        <img class="mascotte chatbotimg" />
+
+        <section class="secondstate">
+          <div>
+            <button class="keuzebtn" id="boekenbtn" value="book">
+              <img src="/assets/images/boeken.svg" alt="Knop met boeken" />
+            </button>
+            <button class="keuzebtn" id="videosbtn" value="movie">
+              <img src="/assets/images/videos.svg" alt="Knop met videos" />
+            </button>
+          </div>
+        </section>
+
+        <section class="thirdstate">
+          <p id="convert_text">...</p>
+        </section>
+
+        <section class="results"></section>
+      </div>
+    </main>
+
+    <%- include("partials/footer") %>
+    <script src="/js/search.js"></script>
+  </body>
+</html>

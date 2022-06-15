@@ -5,7 +5,7 @@
     <%- include("partials/header") %>
     <main class="detail-template">
       <section class="content">
-        <a class="goback" href="/"> Terug</a>
+        <a class="goback" href="/"> <img src="/assets/icons/arrow-2.svg"><span>Terug</span></a>
 
         <%if (item.length > 0) { %> <% item.forEach(function(item) { %>
         <div class="heading">
@@ -39,7 +39,7 @@
                 <div class="lion-container">
                   <img
                   src="/assets/images/lion.png"
-                  class="little-helper"
+                  class="mascotte little-helper"
                   alt="little-helper"
                 />
                 </div>

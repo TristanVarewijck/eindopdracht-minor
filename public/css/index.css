@@ -36,6 +36,16 @@
   font-weight: lighter;
   font-style: italic; }
 
+body::-webkit-scrollbar {
+  display: none; }
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none;
+  /* IE and Edge */
+  scrollbar-width: none;
+  /* Firefox */ }
+
 body {
   font-size: 15px;
   font-family: "inter", sans-serif !important;
@@ -67,7 +77,8 @@ body {
         body header nav ul li a {
           color: #812c7c;
           text-decoration: none;
-          font-weight: bold; }
+          font-weight: bold;
+          opacity: 0.35; }
   body main section {
     position: relative;
     padding: 60px 60px;
@@ -113,14 +124,12 @@ body {
           height: auto; }
       body main section .controls div:last-of-type {
         transform: rotate(-180deg); }
-  body main .products:nth-last-of-type(2n) {
+  body main .products:nth-of-type(2n) {
     background-color: rgba(216, 18, 125, 0.05);
     background-image: url("/assets/images/pattern-1.svg");
     background-repeat: no-repeat;
     background-size: contain;
     background-position-y: 0%; }
-  body main section.product:last-of-type {
-    background-color: green; }
   body main .chatbot-container {
     position: fixed;
     background: #fff0a5;
@@ -166,7 +175,8 @@ body {
       width: 100%;
       text-align: center;
       font-size: 32px;
-      transform: translateY(150px); }
+      transform: translateY(150px);
+      margin-bottom: 1.2em; }
     body .overlay .choises {
       width: 100%;
       height: 100%;
@@ -180,7 +190,10 @@ body {
         padding: 0; }
       body .overlay .choises li {
         display: inline-block; }
-      body .overlay .choises input[type="checkbox"][id^="myCheckbox"] {
+        body .overlay .choises li h4 {
+          text-align: center;
+          margin-top: 0.5em; }
+      body .overlay .choises input[type="radio"][id^="myCheckbox"] {
         display: none; }
       body .overlay .choises label {
         border: 1px solid #fff;
@@ -188,7 +201,15 @@ body {
         display: block;
         position: relative;
         margin: 10px;
-        cursor: pointer; }
+        cursor: pointer;
+        padding: 2.5em 1.5em 0 1.5em;
+        border-radius: 50% 50% 0 0; }
+      body .overlay .choises label[for="myCheckbox1"] {
+        background-color: #fff9dc; }
+      body .overlay .choises label[for="myCheckbox2"] {
+        background-color: #d0e8f1; }
+      body .overlay .choises label[for="myCheckbox3"] {
+        background-color: #e3d7e3; }
       body .overlay .choises label:before {
         background-color: white;
         color: white;
@@ -233,6 +254,9 @@ body {
     transition: 200ms ease-in-out; }
   body main.detail-template a:hover {
     filter: none; }
+  body main.detail-template a:first-of-type img {
+    margin-right: 1em;
+    padding-left: 5px; }
   body main.detail-template .content {
     position: relative;
     margin-top: 1em;
@@ -299,7 +323,6 @@ body {
           width: 250px; }
     body main.detail-template .content .helper-section .text {
       background: #fff0a5;
-      opacity: 0.15;
       padding: 0.5em 1.5em;
       border-radius: 6px; }
     body main.detail-template .content .heading {
@@ -342,12 +365,93 @@ body {
     body main.detail-template .reserveAction p {
       font-weight: 500;
       font-size: 20px; }
+  body main.search {
+    overflow-x: auto;
+    position: fixed;
+    top: 0;
+    z-index: 99999999;
+    height: 100vh;
+    width: 100%;
+    background: #fde672; }
+    body main.search div {
+      display: grid; }
+    body main.search .chatbotimg {
+      width: 400px;
+      position: absolute;
+      bottom: 0;
+      z-index: 9999;
+      left: 0;
+      right: 0;
+      margin: 0 auto; }
+    body main.search .secondstate {
+      background: none;
+      box-shadow: none; }
+    body main.search .secondstate div {
+      width: 1000px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-around;
+      align-items: center; }
+    body main.search .secondstate div button {
+      background: none;
+      border: none; }
+    body main.search .secondstate div button img {
+      width: 250px; }
+    body main.search .thirdstate {
+      display: none; }
+    body main.search .thirdopen {
+      display: block;
+      position: absolute;
+      top: 0;
+      z-index: 999;
+      height: 100%;
+      width: 100%;
+      background: #fde672;
+      text-align: center; }
+    body main.search .thirdopen p {
+      font-size: 3em;
+      margin-top: 50px; }
+    body main.search .results {
+      display: none;
+      overflow-y: auto;
+      width: 1200px;
+      margin: auto;
+      top: 0;
+      left: 0;
+      right: 0;
+      position: absolute;
+      background: #fde672;
+      z-index: 999999; }
+    body main.search .results ul {
+      height: 305px;
+      width: 300px;
+      position: relative;
+      list-style: none;
+      padding: 0;
+      text-align: center; }
+    body main.search .results li {
+      position: absolute;
+      width: 100%; }
+    body main.search .results li:nth-child(1) {
+      bottom: 0; }
+    body main.search .results li:nth-child(2) {
+      top: 0; }
+    body main.search .results img {
+      height: 200px;
+      width: 200px;
+      border-radius: 35px;
+      object-fit: cover;
+      transition: 200ms ease-in; }
+    body main.search .results h3 {
+      font-size: 15px;
+      height: 80px; }
   body footer {
     display: flex;
     justify-content: center;
     align-items: center;
     background: #fff0a5;
-    height: 30px; }
+    height: 30px;
+    margin-top: 4.5em; }
     body footer p {
       margin: 0; }
     body footer a {
