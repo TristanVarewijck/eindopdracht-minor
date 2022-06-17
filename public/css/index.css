@@ -149,7 +149,8 @@ body {
       left: 0;
       right: 0;
       width: 250px;
-      height: auto; }
+      height: auto;
+      cursor: pointer; }
     body main .chatbot-container h1 {
       width: fit-content;
       text-align: center;
@@ -163,6 +164,27 @@ body {
       right: 0;
       border-radius: 50px 50px 50px 0px;
       box-shadow: 0px 4px 12px rgba(104, 104, 104, 0.15); }
+  body .animation-containter {
+    animation: chatbotoverlay 1.5s;
+    animation-fill-mode: forwards; }
+  body .animate-mascotte {
+    animation: mascotteoverlay 1.5s;
+    animation-fill-mode: forwards; }
+
+@keyframes chatbotoverlay {
+  0% {
+    height: 0%;
+    left: 0; }
+  100% {
+    height: 100%;
+    z-index: 99999;
+    left: 0; } }
+
+@keyframes mascotteoverlay {
+  0% {
+    width: 250px; }
+  100% {
+    width: 400px; } }
   body .overlay {
     width: 100%;
     height: 100%;
@@ -372,7 +394,11 @@ body {
     z-index: 99999999;
     height: 100vh;
     width: 100%;
-    background: #fde672; }
+    background: #fff0a5;
+    background-image: url(/assets/images/pattern-1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: normal; }
     body main.search div {
       display: grid; }
     body main.search .chatbotimg {
@@ -382,7 +408,8 @@ body {
       z-index: 9999;
       left: 0;
       right: 0;
-      margin: 0 auto; }
+      margin: 0 auto;
+      cursor: pointer; }
     body main.search .secondstate {
       background: none;
       box-shadow: none; }
@@ -406,8 +433,12 @@ body {
       z-index: 999;
       height: 100%;
       width: 100%;
-      background: #fde672;
-      text-align: center; }
+      text-align: center;
+      background: #fff0a5;
+      background-image: url("/assets/images/pattern-1.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: normal; }
     body main.search .thirdopen p {
       font-size: 3em;
       margin-top: 50px; }
@@ -420,7 +451,8 @@ body {
       left: 0;
       right: 0;
       position: absolute;
-      background: #fde672;
+      background: none;
+      box-shadow: none;
       z-index: 999999; }
     body main.search .results ul {
       height: 305px;
@@ -445,6 +477,22 @@ body {
     body main.search .results h3 {
       font-size: 15px;
       height: 80px; }
+    body main.search .emptystate {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      text-align: center;
+      gap: 30px; }
+    body main.search .refreshbtn {
+      display: none;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999999;
+      width: 150px; }
+    body main.search .refreshbtn img {
+      width: 100%;
+      height: 100%; }
   body footer {
     display: flex;
     justify-content: center;

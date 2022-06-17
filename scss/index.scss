@@ -203,6 +203,7 @@ body {
         right: 0;
         width: 250px;
         height: auto;
+        cursor: pointer;
       }
 
       h1 {
@@ -219,6 +220,39 @@ body {
         border-radius: 50px 50px 50px 0px;
         box-shadow: 0px 4px 12px rgba(104, 104, 104, 0.15);
       }
+    }
+  }
+
+  .animation-containter {
+    animation: chatbotoverlay 1.5s;
+    animation-fill-mode: forwards;
+  }
+
+  .animate-mascotte {
+    animation: mascotteoverlay 1.5s;
+    animation-fill-mode: forwards;
+  }
+
+  @keyframes chatbotoverlay {
+    0% {
+      height: 0%;
+      left: 0;
+    }
+
+    100% {
+      height: 100%;
+      z-index: 99999;
+      left: 0;
+    }
+  }
+
+  @keyframes mascotteoverlay {
+    0% {
+      width: 250px;
+    }
+
+    100% {
+      width: 400px;
     }
   }
 
@@ -366,8 +400,8 @@ body {
       border-radius: 20px;
       left: 50%;
       height: fit-content;
-      background-image: url("/assets/images/star.svg"), url("/assets/images/circle.svg"),
-        url("/assets/images/sqaure.svg");
+      background-image: url("/assets/images/star.svg"),
+        url("/assets/images/circle.svg"), url("/assets/images/sqaure.svg");
       background-position: 65% 5%, 90% 5%, 95% 40%;
       background-repeat: no-repeat;
       transform: rotate(5deg) translateX(-50%);
@@ -514,7 +548,11 @@ body {
     z-index: 99999999;
     height: 100vh;
     width: 100%;
-    background: #fde672;
+    background: #fff0a5;
+    background-image: url(/assets/images/pattern-1.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: normal;
     div {
       display: grid;
     }
@@ -526,6 +564,7 @@ body {
       left: 0;
       right: 0;
       margin: 0 auto;
+      cursor: pointer;
     }
     .secondstate {
       background: none;
@@ -558,8 +597,12 @@ body {
       z-index: 999;
       height: 100%;
       width: 100%;
-      background: #fde672;
       text-align: center;
+      background: $yellow-color;
+      background-image: url("/assets/images/pattern-1.svg");
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-blend-mode: normal;
     }
 
     .thirdopen p {
@@ -576,7 +619,8 @@ body {
       left: 0;
       right: 0;
       position: absolute;
-      background: #fde672;
+      background: none;
+      box-shadow: none;
       z-index: 999999;
     }
 
@@ -613,6 +657,28 @@ body {
     .results h3 {
       font-size: 15px;
       height: 80px;
+    }
+
+    .emptystate {
+      display: flex;
+      flex-direction: column;
+      margin: 0 auto;
+      text-align: center;
+      gap: 30px;
+    }
+
+    .refreshbtn {
+      display: none;
+      position: absolute;
+      bottom: 20px;
+      left: 20px;
+      z-index: 999999;
+      width: 150px;
+    }
+
+    .refreshbtn img {
+      width: 100%;
+      height: 100%;
     }
   }
 

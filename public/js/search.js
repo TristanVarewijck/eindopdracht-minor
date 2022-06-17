@@ -1,7 +1,7 @@
 const leeuw = document.querySelector(".chatbotimg");
 var keuze;
 
-var audio1 = new Audio("/assets/audio/audio2.mp2");
+var audio1 = new Audio("/assets/audio/audio1.mp3");
 audio1.play();
 
 const keuzebtn = document.querySelectorAll(".keuzebtn");
@@ -37,6 +37,8 @@ for (let i = 0; i < keuzebtn.length; i++) {
         var uitkomst = document.querySelector("#convert_text").innerHTML;
 
         if (keuzebtn[i].value == "book") {
+          document.querySelector("#convert_text").style.display = "none";
+
           console.log("is boek");
           var prentboek = "classification:prentenboek%20";
 
@@ -62,12 +64,17 @@ for (let i = 0; i < keuzebtn.length; i++) {
                   let html = "";
 
                   html += ` 
-                 <p>Ik heb niets gevonden</p>
+                <div class="emptystate">
+                 <p>Probeer het opnieuw</p>
+                 <a href="/search"><img src="/assets/icons/refresh.png"></a>
+                 </div>
                 `;
 
                   html += "";
                   document.querySelector(".results").innerHTML = html;
                   document.querySelector(".results").style.display = "flex";
+                  var audio3 = new Audio("/assets/audio/audio3.mp3");
+                  audio3.play();
                 } else {
                   let html = "";
 
@@ -85,12 +92,17 @@ for (let i = 0; i < keuzebtn.length; i++) {
                   html += "";
                   document.querySelector(".results").innerHTML = html;
                   document.querySelector(".results").style.display = "flex";
+                  document.querySelector(".refreshbtn").style.display = "block";
+                  var audio4 = new Audio("/assets/audio/audio4.mp3");
+                  audio4.play();
                 }
               });
           }
           handleApi();
         } else {
           console.log("is geen boek");
+          document.querySelector("#convert_text").style.display = "none";
+
           var prentboek = "";
           console.log(uitkomst + keuze + prentboek);
           async function handleApi() {
@@ -110,11 +122,16 @@ for (let i = 0; i < keuzebtn.length; i++) {
                 if (dataResults.length === 0) {
                   let html = "";
                   html += ` 
-                  <p>Ik heb niets gevonden</p>
+                  <div class="emptystate">
+                 <p>Probeer het opnieuw</p>
+                 <a href="/search"><img src="/assets/icons/refresh.png"></a>
+                 </div>
                 `;
                   html += "";
                   document.querySelector(".results").innerHTML = html;
                   document.querySelector(".results").style.display = "flex";
+                  var audio3 = new Audio("/assets/audio/audio3.mp3");
+                  audio3.play();
                 } else {
                   let html = "";
                   for (let i = 0; i < dataResults.length; i++) {
@@ -130,6 +147,9 @@ for (let i = 0; i < keuzebtn.length; i++) {
                   html += "";
                   document.querySelector(".results").innerHTML = html;
                   document.querySelector(".results").style.display = "flex";
+                  document.querySelector(".refreshbtn").style.display = "block";
+                  var audio4 = new Audio("/assets/audio/audio4.mp3");
+                  audio4.play();
                 }
               });
           }
@@ -139,3 +159,43 @@ for (let i = 0; i < keuzebtn.length; i++) {
     }
   });
 }
+
+document.querySelector(".mascotte").addEventListener("click", () => {
+  var lach1 = new Audio("/assets/audio/lach1.mp3");
+  var lach2 = new Audio("/assets/audio/lach2.mp3");
+  var lach3 = new Audio("/assets/audio/lach3.mp3");
+  gelach = [lach1, lach2, lach3];
+  var index = Math.floor(Math.random() * 1000) % gelach.length;
+  var id = gelach[index];
+
+  var mascotte = document.querySelector(".mascotte");
+
+  var src = mascotte.src;
+
+  if (src === "http://localhost:3500/assets/images/Lion.png") {
+    console.log("leeuw");
+    id.play();
+    mascotte.src = "/assets/images/leeuwlach.gif";
+    setTimeout(function () {
+      mascotte.src = "/assets/images/Lion.png";
+    }, 2000);
+  } else if (src === "http://localhost:3500/assets/images/Robot.png") {
+    console.log("robot");
+    var robotlach = new Audio("/assets/audio/robotlach.mp3");
+    robotlach.play();
+
+    mascotte.src = "/assets/images/robotlach.gif";
+    setTimeout(function () {
+      mascotte.src = "/assets/images/Robot.png";
+    }, 4000);
+  } else if (src === "http://localhost:3500/assets/images/Monster.png") {
+    console.log("monster");
+    id.play();
+    mascotte.src = "/assets/images/monsterlach.gif";
+    setTimeout(function () {
+      mascotte.src = "/assets/images/Monster.png";
+    }, 2000);
+  } else {
+    console.log("undifeind");
+  }
+});

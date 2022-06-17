@@ -1,6 +1,6 @@
 let synth = window.speechSynthesis;
 const speechSettings = {
-  lang: "nl-BE",
+  lang: "BE-nl",
   pitch: 1,
   rate: 0.75,
   volume: 0.7,
